@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gowtham Pandiyan | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header_inner">
+        <a href="#" class="logo">GP</a>
+
+        <!-- Desktop nav -->
+        <nav class="nav">
+          <ul class="nav_list">
+            <li><a href="#about" class="nav_link">About</a></li>
+            <li><a href="#experience" class="nav_link">Experience</a></li>
+            <li><a href="#work" class="nav_link">Work</a></li>
+            <li><a href="#contact" class="nav_link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header_actions">
+          <!-- Theme toggle -->
+          <button id="theme_toggle" class="icon_btn" aria-label="Toggle theme">
+            <i id="theme_icon" class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Resume -->
+          <a href="./image/Gowtham.pdf" target="_blank" class="btn btn-primary">
+            Resume
+          </a>
+
+          <!-- Burger -->
+          <button id="menu_btn" class="icon_btn burger" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile nav -->
+      <div id="mobile_nav" class="mobile_nav">
+        <nav class="mobile_nav_inner">
+          <a href="#about" class="mobile_link">About</a>
+          <a href="#experience" class="mobile_link">Experience</a>
+          <a href="#work" class="mobile_link">Work</a>
+          <a href="#contact" class="mobile_link">Contact</a>
+
+          <a
+            href="./image/Gowtham.pdf"
+            target="_blank"
+            class="btn btn-primary mobile_resume"
+          >
+            Resume
+          </a>
+
+          <div class="mobile_socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero section reveal">
+        <div class="container hero_inner">
+          <img src="./image/gp1.jpg" alt="Gowtham" class="hero_img" />
+
+          <p class="hero_subtitle">
+            HI I'M
+            <span id="typed_name"></span><span id="typed_cursor">|</span>
+          </p>
+
+          <h1 class="hero_title">Data Analyst<br />Web Developer</h1>
+
+          <p class="hero_desc">
+            I combine <span>data analysis</span> and
+            <span>front-end development</span> to turn raw information into
+            clear dashboards and modern web experiences.
+          </p>
+
+          <a href="#contact" class="btn btn-primary hero_btn">Reach Out</a>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section reveal">
+        <div class="container about_inner">
+          <div class="about_left">
+            <h2 class="section_title">About</h2>
+            <p class="about_text">
+              I'm <strong>Gowtham Pandiyan</strong>, a
+              <span>Data Analyst</span> and <span>Web Developer</span> with a
+              background in business operations and reporting.
+            </p>
+            <p class="about_text">
+              I enjoy working with data, spotting patterns, and presenting
+              insights through dashboards and clean user interfaces.
+            </p>
+            <p class="about_text">
+              My toolkit includes <strong>Excel</strong>, <strong>SQL</strong>,
+              <strong>Power BI</strong> on the data side and
+              <strong>HTML, CSS, JavaScript</strong> on the web side.
+            </p>
+
+            <hr class="about_divider" />
+
+            <h3 class="skills_heading">Skills</h3>
+
+            <div class="skills_grid">
+              <div>
+                <h4>TOOLS</h4>
+                <ul>
+                  <li>Excel</li>
+                  <li>adobe express</li>
+                  <li>Git & GitHub</li>
+                  <li>Jupyter Notebooke</li>
+                  <li>Power BI</li>
+                </ul>
+              </div>
+              <div>
+                <h4>TECHNOLOGIES</h4>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JAVASCRIPT</li>
+                  <li>SQL</li>
+                  <li>PYTHON</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Soft</h4>
+                <ul>
+                  <li>Business Reporting</li>
+                  <li>Communication</li>
+                  <li>Team Collaboration</li>
+                  <li>Problem Solving</li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="about_right">
+            <img src="./image/gp2.jpg" alt="Gowtham portrait" />
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section reveal">
+        <div class="container experience_inner">
+          <h2 class="section_title">Experience</h2>
+
+          <div class="exp_timeline">
+            <div class="exp_item">
+              <h3>Merchandising Analyst</h3>
+              <p class="exp_company">Lifestyle International Pvt Ltd</p>
+              <p class="exp_period">2023 – Present</p>
+              <ul>
+                <li>
+                  Analysed sales and inventory data for lifestyle products.
+                </li>
+                <li>Built weekly performance reports for category teams.</li>
+                <li>Supported assortment and stock allocation decisions.</li>
+              </ul>
+            </div>
+
+            <div class="exp_item">
+              <h3>Retail Sales Analyst</h3>
+              <p class="exp_company">KHADIM India Ltd.</p>
+              <p class="exp_period">2021 – 2023</p>
+              <ul>
+                <li>Monitored store-wise sales and trends with Excel & SQL.</li>
+                <li>Prepared dashboards to track KPIs and promotions.</li>
+                <li>Worked with sales teams to improve outlet performance.</li>
+              </ul>
+            </div>
+
+            <div class="exp_item">
+              <h3>Reporting Assistant</h3>
+              <p class="exp_company">Sri Annapoorna Restaurant</p>
+              <p class="exp_period">2019 – 2021</p>
+              <ul>
+                <li>Maintained daily revenue and expense reports.</li>
+                <li>Helped management understand outlet performance.</li>
+              </ul>
+            </div>
+
+            <div class="exp_item">
+              <h3>Telecaller</h3>
+              <p class="exp_company">Forte Management Services</p>
+              <p class="exp_period">2018 – 2019</p>
+              <ul>
+                <li>
+                  Strengthened communication and customer handling skills.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work" class="section reveal work">
+        <div class="container work_inner">
+          <h2 class="section_title">Work</h2>
+          <p class="section_subtitle">
+            Selected projects from my web and data journey.
+          </p>
+
+          <div class="work_list">
+            <!-- 1: image left -->
+            <article class="work_item">
+              <div class="work_image">
+                <img src="./image/portfolio.png" alt="Portfolio Website" />
+              </div>
+              <div class="work_content">
+                <h3 class="work_heading">portfolio website</h3>
+                <p class="work_text">
+                  A clean, responsive portfolio built with HTML, CSS and
+                  JavaScript, showcasing my profile, projects, and contact
+                  details.
+                </p>
+                <a
+                  href="https://portfolio-2-thtx-gowthampandiyanks-projects.vercel.app/"
+                  target="_blank"
+                  class="btn btn-primary work_btn"
+                >
+                  website
+                </a>
+              </div>
+            </article>
+
+            <!-- 2: image right -->
+            <article class="work_item">
+              <div class="work_image">
+                <img src="./image/calculator.png" alt="Calculator App" />
+              </div>
+              <div class="work_content">
+                <h3 class="work_heading">calculator</h3>
+                <p class="work_text">
+                  A simple, responsive calculator with basic arithmetic
+                  operations and keyboard support built in JavaScript.
+                </p>
+                <a
+                  href="https://calculetor-gowthampandiyanks-projects.vercel.app/"
+                  target="_blank"
+                  class="btn btn-primary work_btn"
+                >
+                  website
+                </a>
+              </div>
+            </article>
+
+            <!-- 3: image left -->
+            <article class="work_item">
+              <div class="work_image">
+                <img src="./image/chat generater.png" alt="Chart Generator" />
+              </div>
+              <div class="work_content">
+                <h3 class="work_heading">chart generator</h3>
+                <p class="work_text">
+                  Generate dynamic charts using Chart.js from user input, useful
+                  for quickly visualising small datasets.
+                </p>
+                <a
+                  href="https://chart-generator-gowthampandiyanks-projects.vercel.app/"
+                  target="_blank"
+                  class="btn btn-primary work_btn"
+                >
+                  website
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="work_more">
+            <a
+              href="works.html"
+              target="_blank"
+              class="btn btn-outline work_more_btn"
+            >
+              more
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section reveal">
+        <div class="container contact_inner">
+          <h2 class="section_title">Contact Me</h2>
+          <p class="section_subtitle">
+            Open to roles in <strong>Data Analysis</strong> and
+            <strong>Front-End Development</strong>.
+          </p>
+
+          <div class="contact_info">
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              gowthampandiyan7@gmail.com
+            </p>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              +91 98844 9773
+            </p>
+          </div>
+
+          <div class="contact_socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+
+          <form
+            class="contact_form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="29fa3af1-d7cc-4cb5-8f26-ca42d5ca5901"
+            />
+
+            <input type="text" name="name" placeholder="YOUR NAME" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="YOUR EMAIL"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="YOUR MESSAGE"
+              required
+            ></textarea>
+
+            <button type="submit" class="btn btn-primary">submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer_inner">
+        <p>© 2025 Gowtham Pandiyan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All Works – Gowtham Pandiyan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="works.css" />
+  <script defer src="works.js"></script>
+</head>
+<body>
+  <header class="works_header">
+    <a href="index.html" class="back_btn">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+    <h2 class="page_title">My Full Work Collection</h2>
+  </header>
+
+  <section class="works_controls">
+    <div class="filters">
+      <button class="filter_btn active" data-filter="all">All</button>
+      <button class="filter_btn" data-filter="web">Web</button>
+      <button class="filter_btn" data-filter="data">Data</button>
+      <button class="filter_btn" data-filter="ui">UI / UX</button>
+    </div>
+
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="search_input" placeholder="Search projects..." />
+    </div>
+  </section>
+
+  <section class="masonry reveal">
+    <!-- Repeat cards like below -->
+
+    <article class="card" data-category="web">
+      <img src="./image/portfolio.png" alt="Portfolio Website" loading="lazy" />
+      <div class="card_content">
+        <h3 class="card_title">Portfolio Website</h3>
+        <p class="card_desc">
+          Clean, responsive portfolio showcasing my work as a Business Analyst & Web Developer.
+        </p>
+        <a
+          href="https://portfolio-2-thtx-gowthampandiyanks-projects.vercel.app/"
+          target="_blank"
+          class="btn"
+          >View</a
+        >
+      </div>
+    </article>
+
+    <article class="card tall" data-category="web">
+      <img src="./image/calculator.png" alt="Calculator App" loading="lazy" />
+      <div class="card_content">
+        <h3 class="card_title">Calculator App</h3>
+        <p class="card_desc">
+          Simple but clean calculator with keyboard support in JavaScript.
+        </p>
+        <a
+          href="https://calculetor-gowthampandiyanks-projects.vercel.app/"
+          target="_blank"
+          class="btn"
+          >View</a
+        >
+      </div>
+    </article>
+
+    <article class="card wide" data-category="web data">
+      <img src="./image/chat generater.png" alt="Chart Generator" loading="lazy" />
+      <div class="card_content">
+        <h3 class="card_title">Chart Generator</h3>
+        <p class="card_desc">
+          Generate charts with Chart.js from quick input data.
+        </p>
+        <a
+          href="https://chart-generator-gowthampandiyanks-projects.vercel.app/"
+          target="_blank"
+          class="btn"
+          >View</a
+        >
+      </div>
+    </article>
+
+    <article class="card" data-category="data">
+      <img src="./image/sales-dashboard.png" alt="Sales Dashboard" loading="lazy" />
+      <div class="card_content">
+        <h3 class="card_title">Sales Performance Dashboard</h3>
+        <p class="card_desc">
+          Power BI dashboard tracking KPIs across outlets and time periods.
+        </p>
+        <a href="#" target="_blank" class="btn">View</a>
+      </div>
+    </article>
+
+    <article class="card tall" data-category="data">
+      <img src="./image/sql-analysis.png" alt="SQL Analytics" loading="lazy" />
+      <div class="card_content">
+        <h3 class="card_title">SQL Analytics Project</h3>
+        <p class="card_desc">
+          Complex SQL analysis using joins, CTEs and window functions.
+        </p>
+        <a href="#" target="_blank" class="btn">View</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="ui">
+      <img src="./image/ui-mockups.png" alt="UI Mockups" loading="lazy" />
+      <div class="card_content">
+        <h3 class="card_title">UI Mockups</h3>
+        <p class="card_desc">
+          Simple dashboard and landing page concepts designed in Figma.
+        </p>
+        <a href="#" target="_blank" class="btn">View</a>
+      </div>
+    </article>
+  </section>
+
+  <footer class="works_footer">
+    © 2025 Gowtham Pandiyan — All Rights Reserved.
+  </footer>
+
+  <!-- MODAL PREVIEW -->
+  <div id="project_modal" class="modal">
+    <div class="modal_backdrop"></div>
+    <div class="modal_content">
+      <button class="modal_close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="modal_img" src="" alt="Project preview" />
+      <h3 id="modal_title"></h3>
+      <p id="modal_desc"></p>
+      <a id="modal_link" href="#" target="_blank" class="btn">Open Project</a>
+    </div>
+  </div>
+</body>
+</html>
