@@ -1,20 +1,30 @@
-// SYNC LIGHT/DARK THEME FROM MAIN SITE
+// THEME TOGGLE (Light default → Dark → Light)
 (function () {
-  const theme = localStorage.getItem("theme");
-  if (theme === "dark") {
-    document.body.style.setProperty("--bg-main", "#020617");
-    document.body.style.setProperty("--bg-elevated", "#020617");
-    document.body.style.setProperty("--text-main", "#f9fafb");
-    document.body.style.setProperty("--text-soft", "#9ca3af");
+  const toggleBtn = document.getElementById("theme_toggle");
+  const icon = document.getElementById("theme_icon");
+  if (!toggleBtn || !icon) return;
+
+  const stored = localStorage.getItem("theme");
+  if (stored === "dark") {
+    document.body.classList.add("dark-mode");
+    icon.className = "fa-solid fa-sun"; // show sun in dark mode
   } else {
-    document.body.style.setProperty("--bg-main", "#f5f5f5");
-    document.body.style.setProperty("--bg-elevated", "#ffffff");
-    document.body.style.setProperty("--text-main", "#111827");
-    document.body.style.setProperty("--text-soft", "#6b7280");
+    icon.className = "fa-solid fa-moon"; // show moon in light mode
   }
+
+  toggleBtn.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+    if (isDark) {
+      localStorage.setItem("theme", "dark");
+      icon.className = "fa-solid fa-sun";
+    } else {
+      localStorage.removeItem("theme");
+      icon.className = "fa-solid fa-moon";
+    }
+  });
 })();
 
-// SCROLL REVEAL
+// SCROLL REVEAL FOR CARDS
 (function () {
   const section = document.querySelector(".masonry");
   if (!section) return;
@@ -43,9 +53,12 @@
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const filter = btn.getAttribute("data-filter");
+
+      // active state
       filterBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
+      // filter cards
       cards.forEach((card) => {
         const category = card.getAttribute("data-category") || "";
         if (filter === "all" || category.includes(filter)) {
@@ -119,7 +132,7 @@
 
   cards.forEach((card) => {
     card.addEventListener("click", (e) => {
-      // allow button click to open link directly
+      // let "View" button open link directly
       if (e.target.closest(".btn")) return;
       openModal(card);
     });
@@ -127,7 +140,10 @@
 
   closeBtn?.addEventListener("click", closeModal);
   backdrop?.addEventListener("click", closeModal);
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.style.display === "flex") closeModal();
+    if (e.key === "Escape" && modal.style.display === "flex") {
+      closeModal();
+    }
   });
 })();
