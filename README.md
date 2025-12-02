@@ -40,4 +40,4 @@ GitHub Pages (deployment)
 
 ## 📷 Portfolio Preview
 
-![Portfolio Screenshot](./portfolio-preview.png)
+![Portfolio Screenshot](image/portfolio.png)
