@@ -35,9 +35,8 @@ Git & GitHub
 GitHub Pages (deployment)
 
 📌 Live Demo ( https://gowthampandiyank.github.io/Portfolio-Gowtham/ )
-🔗 Visit my portfolio here:
-👉 https://gowthampandiyank.github.io
+🔗 Visit my portfolio here:  https://gowthampandiyank.github.io/Portfolio-Gowtham/
 
 ## 📷 Portfolio Preview
 
-![Portfolio Screenshot](image/portfolio.png )
+![Portfolio Screenshot](image/portfolio.png)
