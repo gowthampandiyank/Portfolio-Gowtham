@@ -1,30 +1,73 @@
-// THEME TOGGLE
+// THEME TOGGLE (Light default → Dark → Light)
 (function () {
-  const toggle = document.getElementById("theme_toggle");
+  const toggleBtn = document.getElementById("theme_toggle");
   const icon = document.getElementById("theme_icon");
+  if (!toggleBtn || !icon) return;
 
   const stored = localStorage.getItem("theme");
   if (stored === "dark") {
     document.body.classList.add("dark-mode");
-    icon.className = "fa-solid fa-sun";
+    icon.className = "fa-solid fa-sun"; // show sun in dark mode
+  } else {
+    icon.className = "fa-solid fa-moon"; // show moon in light mode
   }
 
-  toggle?.addEventListener("click", () => {
+  toggleBtn.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
-
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    if (isDark) {
+      localStorage.setItem("theme", "dark");
+      icon.className = "fa-solid fa-sun";
+    } else {
+      localStorage.removeItem("theme");
+      icon.className = "fa-solid fa-moon";
+    }
   });
 })();
 
-// MOBILE MENU
+// SCROLL REVEAL FOR CARDS
 (function () {
-  const menu = document.getElementById("mobile_menu");
-  document.getElementById("hamburger_btn")?.addEventListener("click", () => {
-    menu.classList.add("active");
-  });
-  document.querySelector(".close_menu")?.addEventListener("click", () => {
-    menu.classList.remove("active");
+  const section = document.querySelector(".masonry");
+  if (!section) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          section.classList.add("active");
+          observer.unobserve(section);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(section);
+})();
+
+// FILTER BY CATEGORY
+(function () {
+  const filterBtns = document.querySelectorAll(".filter_btn");
+  const cards = document.querySelectorAll(".card");
+  if (!filterBtns.length || !cards.length) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
+      // active state
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // filter cards
+      cards.forEach((card) => {
+        const category = card.getAttribute("data-category") || "";
+        if (filter === "all" || category.includes(filter)) {
+          card.style.display = "inline-block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
   });
 })();
 
@@ -32,71 +75,75 @@
 (function () {
   const input = document.getElementById("search_input");
   const cards = document.querySelectorAll(".card");
-
-  if (!input) return;
+  if (!input || !cards.length) return;
 
   input.addEventListener("input", () => {
-    const q = input.value.toLowerCase();
+    const query = input.value.toLowerCase().trim();
 
     cards.forEach((card) => {
-      const title = card.querySelector(".card_title")?.textContent.toLowerCase();
-      const desc = card.querySelector(".card_desc")?.textContent.toLowerCase();
+      const title =
+        card.querySelector(".card_title")?.textContent.toLowerCase() || "";
+      const desc =
+        card.querySelector(".card_desc")?.textContent.toLowerCase() || "";
 
-      card.style.display = title.includes(q) || desc.includes(q)
-        ? "inline-block"
-        : "none";
+      if (title.includes(query) || desc.includes(query)) {
+        card.style.display = "inline-block";
+      } else {
+        card.style.display = "none";
+      }
     });
   });
 })();
 
-// FILTER BUTTON LOGIC
+// MODAL PREVIEW
 (function () {
-  const buttons = document.querySelectorAll(".filter_btn");
   const cards = document.querySelectorAll(".card");
-
-  if (!buttons.length) return;
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const filter = btn.dataset.filter;
-
-      buttons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      cards.forEach((card) => {
-        const category = card.dataset.category;
-        card.style.display =
-          filter === "all" || filter === category ? "inline-block" : "none";
-      });
-    });
-  });
-})();
-
-// MODAL VIEWER
-(function () {
   const modal = document.getElementById("project_modal");
   const modalImg = document.getElementById("modal_img");
   const modalTitle = document.getElementById("modal_title");
   const modalDesc = document.getElementById("modal_desc");
   const modalLink = document.getElementById("modal_link");
+  const closeBtn = document.querySelector(".modal_close");
+  const backdrop = document.querySelector(".modal_backdrop");
 
-  document.querySelectorAll(".card").forEach((card) =>
-    card.addEventListener("click", (e) => {
-      if (e.target.closest(".btn")) return;
+  if (!cards.length || !modal) return;
 
-      modalImg.src = card.querySelector("img").src;
-      modalTitle.textContent = card.querySelector(".card_title").textContent;
-      modalDesc.textContent = card.querySelector(".card_desc").textContent;
-      modalLink.href = card.querySelector(".btn").href;
-      modal.style.display = "flex";
-    })
-  );
+  function openModal(card) {
+    const img = card.querySelector("img");
+    const title = card.querySelector(".card_title");
+    const desc = card.querySelector(".card_desc");
+    const btn = card.querySelector(".btn");
 
-  document.querySelector(".modal_close")?.addEventListener("click", () => {
+    modalImg.src = img?.src || "";
+    modalImg.alt = img?.alt || "Project preview";
+    modalTitle.textContent = title?.textContent || "";
+    modalDesc.textContent = desc?.textContent || "";
+    modalLink.href = btn?.href || "#";
+    modalLink.style.display = btn?.href ? "inline-flex" : "none";
+
+    modal.style.display = "flex";
+    document.body.style.overflowY = "hidden";
+  }
+
+  function closeModal() {
     modal.style.display = "none";
+    document.body.style.overflowY = "auto";
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      // let "View" button open link directly
+      if (e.target.closest(".btn")) return;
+      openModal(card);
+    });
   });
 
-  document.querySelector(".modal_backdrop")?.addEventListener("click", () => {
-    modal.style.display = "none";
+  closeBtn?.addEventListener("click", closeModal);
+  backdrop?.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.style.display === "flex") {
+      closeModal();
+    }
   });
 })();
