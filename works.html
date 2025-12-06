@@ -14,10 +14,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <meta
-      name="description"
-      content="Full work collection of Gowtham Pandiyan"
-    />
+    <meta name="description" content="Full work collection of Gowtham Pandiyan" />
     <meta name="keywords" content="portfolio, web development, data analysis" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -36,7 +33,7 @@
       <h2 class="page_title">My Full Work Collection</h2>
     </header>
 
-    <!-- NEW MOBILE NAVBAR -->
+    <!-- MOBILE NAVBAR -->
     <nav class="mobile_nav">
       <button id="hamburger_btn" class="hamburger">
         <i class="fa-solid fa-bars"></i>
@@ -47,7 +44,7 @@
         <input type="text" id="search_input" placeholder="Search projects..." />
       </div>
 
-      <button id="theme_toggle" class="icon_btn" aria-label="Toggle theme">
+      <button id="theme_toggle" class="icon_btn">
         <i id="theme_icon" class="fa-solid fa-moon"></i>
       </button>
     </nav>
@@ -65,7 +62,7 @@
       </div>
     </div>
 
-    <!-- OLD CONTROL SECTION (auto hidden on mobile) -->
+    <!-- DESKTOP CONTROLS ONLY (FILTERS ONLY) -->
     <section class="works_controls">
       <div class="filters">
         <button class="filter_btn active" data-filter="all">All</button>
@@ -73,44 +70,30 @@
         <button class="filter_btn" data-filter="data">Data</button>
         <button class="filter_btn" data-filter="ui">UI / UX</button>
       </div>
-
-      <div class="controls_right">
-        <div class="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="search_input2" placeholder="Search projects..." />
-        </div>
-
-        <button id="theme_toggle2" class="icon_btn" aria-label="Toggle theme">
-          <i id="theme_icon2" class="fa-solid fa-moon"></i>
-        </button>
-      </div>
     </section>
 
-    <!-- MASONRY GRID (unchanged) -->
+    <!-- MASONRY GRID -->
     <section class="masonry reveal">
-      <!-- All your cards stay exactly same -->
-      <!-- CARD 1 Portfolio Website -->
+      <!-- Your existing cards stay same -->
       <article class="card" data-category="web">
         <img src="./image/portfolio.png" alt="Portfolio Website" loading="lazy" />
         <div class="card_content">
           <h3 class="card_title">Portfolio Website</h3>
           <p class="card_desc">
-            A clean, responsive portfolio built with HTML, CSS and JavaScript,
-            showcasing my profile, projects, and contact details.
+            A clean, responsive portfolio built with HTML, CSS and JavaScript.
           </p>
           <a href="https://gowthampandiyank.github.io/Portfolio-Gowtham/" target="_blank" class="btn">View</a>
         </div>
       </article>
 
-      <!-- (other cards same as you gave) -->
-      <!-- ... -->
+      <!-- ADD YOUR OTHER CARDS -->
     </section>
 
     <footer class="works_footer">
       © 2025 Gowtham Pandiyan — All Rights Reserved.
     </footer>
 
-    <!-- MODAL PREVIEW (unchanged) -->
+    <!-- MODAL -->
     <div id="project_modal" class="modal">
       <div class="modal_backdrop"></div>
       <div class="modal_content">
