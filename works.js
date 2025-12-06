@@ -24,6 +24,32 @@
   });
 })();
 
+// mobile_nav toggle
+(function () {
+  const toggleBtn = document.getElementById("mobile_nav_theme_toggle");
+  const icon = document.getElementById("theme_icon");
+  if (!toggleBtn || !icon) return;
+
+  const stored = localStorage.getItem("theme");
+  if (stored === "dark") {
+    document.body.classList.add("dark-mode");
+    icon.className = "fa-solid fa-sun"; // show sun in dark mode
+  } else {
+    icon.className = "fa-solid fa-moon"; // show moon in light mode
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+    if (isDark) {
+      localStorage.setItem("theme", "dark");
+      icon.className = "fa-solid fa-sun";
+    } else {
+      localStorage.removeItem("theme");
+      icon.className = "fa-solid fa-moon";
+    }
+  });
+})();
+
 // SCROLL REVEAL FOR CARDS
 (function () {
   const section = document.querySelector(".masonry");
@@ -46,7 +72,7 @@
 
 // FILTER BY CATEGORY
 (function () {
-  const filterBtns = document.querySelectorAll(".filter_btn");
+  const filterBtns = document.querySelectorAll(".mobile_nav_filter_btn");
   const cards = document.querySelectorAll(".card");
   if (!filterBtns.length || !cards.length) return;
 

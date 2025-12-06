@@ -95,7 +95,7 @@ img {
 /* ========== HEADER ========== */
 
 .works_header {
-  padding: 20px;
+  padding: 40px;
   text-align: center;
   position: relative;
 }
@@ -180,7 +180,7 @@ img {
   border: none;
   outline: none;
   background: transparent;
-  color: var(--bg-soft);
+  color: var(--text-main);
   font-size: 0.85rem;
   width: 180px;
 }
@@ -197,7 +197,10 @@ img {
   justify-content: center;
   cursor: pointer;
 }
-
+/* mobile_nav */
+.mobile_nav_works_controls {
+  display: none;
+}
 /* ========== MASONRY GRID ========== */
 
 .masonry {
@@ -327,6 +330,7 @@ img {
   /* .card {
     display: none;
   } */
+
   .masonry {
     columns: 2;
     padding-inline: 1.5rem;
@@ -340,6 +344,90 @@ img {
 }
 
 @media (max-width: 600px) {
+  .works_controls {
+    display: none;
+  }
+
+  .mobile_nav_works_controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rm;
+    padding: 0 2rem 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .mobile_nav_filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .mobile_nav_filter_btn {
+    width: 20%;
+    height: 25px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: var(--bp-soft);
+    color: var(--text-soft);
+    font-size: 0.6rem;
+    font-weight: 30px;
+    cursor: pointer;
+  }
+  .mobile_nav_filter_btn:hover {
+    background: var(--accent-strong-bg);
+    color: #fff;
+    border: none;
+  }
+  .mobile_nav_filter_btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  .mobile_nav_controls_right {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    top: 10px;
+    gap: 0.4rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--bg-main);
+    color: var(--bg-elevated);
+  }
+  .search i {
+    font-size: 0.9rem;
+    color: var(--accent);
+  }
+  #search_input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    width: 180px;
+  }
+
+  .icon_btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: none;
+    background: var(--bg-elevated);
+    color: var(--text-soft);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
   .masonry {
     columns: 1;
     padding-inline: 1rem;
