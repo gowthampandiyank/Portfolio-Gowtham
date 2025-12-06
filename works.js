@@ -23,7 +23,20 @@
     }
   });
 })();
+// MOBILE MENU HANDLER
+(function () {
+  const hamburger = document.getElementById("hamburger_btn");
+  const menu = document.getElementById("mobile_menu");
+  const closeBtn = document.querySelector(".close_menu");
 
+  hamburger?.addEventListener("click", () => {
+    menu.classList.add("active");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    menu.classList.remove("active");
+  });
+})();
 // SCROLL REVEAL FOR CARDS
 (function () {
   const section = document.querySelector(".masonry");
