@@ -216,6 +216,9 @@ a {
   align-items: center;
   gap: 1.5rem;
 }
+.mobile_nav_inner :hover {
+  color: var(--accent);
+}
 
 .mobile_link {
   font-size: 1.1rem;
@@ -233,10 +236,10 @@ a {
 
 .mobile_socials a {
   font-size: 1.1rem;
-  color: var(--text-soft);
+  color: var(--accent);
 }
 .mobile_socials a:hover {
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 /* ========== HERO ========== */
@@ -585,7 +588,7 @@ span {
   font-size: 0.9rem;
   font-family: inherit;
   background: var(--bg-soft);
-  color: var(--bg-main);
+  color: var(--text-main);
 }
 .contact_form textarea {
   min-height: 140px;
