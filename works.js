@@ -88,7 +88,7 @@
       cards.forEach((card) => {
         const category = card.getAttribute("data-category") || "";
         if (filter === "all" || category.includes(filter)) {
-          card.style.display = "inline-block";
+          card.style.display = "flex";
         } else {
           card.style.display = "none";
         }
@@ -113,7 +113,7 @@
         card.querySelector(".card_desc")?.textContent.toLowerCase() || "";
 
       if (title.includes(query) || desc.includes(query)) {
-        card.style.display = "inline-block";
+        card.style.display = "flex";
       } else {
         card.style.display = "none";
       }
